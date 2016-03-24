@@ -12,6 +12,13 @@ def numeral_1():
             new_list.append(int(i))
             
     return new_list
+    
+print (numeral_2())
+
+
+
+
+
 
 def numeral_2():
     lst = [1, [2, 3], 4, [[6, 7]]]
