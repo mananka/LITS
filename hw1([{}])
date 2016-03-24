@@ -1,22 +1,24 @@
 def check(example):
-    LEFT='([{'
-    RIGHT=')]}'
-    PAIR_ROUND='()'
-    PAIR_SQUARE='[]'
-    PAIR_CURLY='{}'
-    l_bracket=[]
+    left = '([{'
+    right = ')]}'
+    pair_round = '()'
+    pair_square = '[]'
+    pair_curly = '{}'
+    l_bracket = []
     for i in example:
-        if i in LEFT:
+        if i in left:
             l_bracket.append(i)
-        if i in RIGHT:
+        if i in right:
             if not l_bracket: return False
-            elif i in PAIR_ROUND and l_bracket[-1] in PAIR_ROUND:
+            elif i in pair_round and l_bracket[-1] in pair_round:
                 del l_bracket[-1]
-            elif i in PAIR_SQUARE and l_bracket[-1] in PAIR_SQUARE:
+            elif i in pair_square and l_bracket[-1] in pair_square:
                 del l_bracket[-1]
-            elif i in PAIR_CURLY and l_bracket[-1] in PAIR_CURLY:
+            elif i in pair_curly and l_bracket[-1] in pair_curly:
                 del l_bracket[-1]
             else: return False
     if not l_bracket: return True
     return False
+
+print (check('(((((((((((((2, 3)))))))))))))'))
 
